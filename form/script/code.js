@@ -5,14 +5,13 @@ const app = Vue.createApp({
          template:`
          <form>
          <input type='text' placeholder='name' v-model= 'FirstName' required>
-         <input type='text' placeholder='surname' v-model= 'LastName' required>
          <input type='number' placeholder='age' v-model= 'Age' required>
          <button v-on:click.prevent= 'display' >Click Me</button>
-        
+         
          </form>
         
          <div v-if='isVisible' id='box1'>
-         <p>{{FirstName}} {{LastName}} {{Age}}</p>
+         <p>{{FirstName}} {{LastName}} is {{Age}} years old</p>
          
          </div>
          
@@ -26,7 +25,7 @@ const app = Vue.createApp({
              Age:0,
              isVisible:false
             }
-         },
+        },
          methods:{
             display(){
                 if(this.Age > 17) {
@@ -41,3 +40,4 @@ const app = Vue.createApp({
     });
     //NEED TO MOUNT IT
     app.mount('#app');
+            //  <input type='text' placeholder='surname' v-model= 'LastName' required>
